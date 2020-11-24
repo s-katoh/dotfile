@@ -1,3 +1,24 @@
+# zsh-setting
+autoload -U compinit
+compinit
+zstyle ':completion:*' menu select
+setopt correct
+bindkey ^T kill-word
+autoload -U select-word-style
+select-word-style bash
+export WORDCHARS='.-'
+#history-setting
+export HISTFILE=${HOME}/.zsh_history
+setopt share_history
+setopt HIST_IGNORE_ALL_DUPS
+
+# Git_ps1 prompt
+source ~/.git-prompt.sh
+setopt PROMPT_SUBST
+GIT_PS1_SHOWDIRTYSTATE=true
+GIT_PS1_SHOWUNTRACKEDFILES=true
+GIT_PS1_SHOWSTASHSTATE=true
+GIT_PS1_SHOWUPSTREAM=verbose
 GIT_PS1_SHOWCOLORHINTS=true
 precmd () { __git_ps1 "%F{009}%c%f" "%F{200}$%f " "(%s)" }
  #precmd () { __git_ps1 "%c" "$ " "(%s)" }
