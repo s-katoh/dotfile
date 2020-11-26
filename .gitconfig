@@ -1,0 +1,26 @@
+[user]
+	name = Shumbow
+	email = shumbow0226@gmail.com
+[alias]
+        st = status
+	co = checkout
+	br = branch
+        log-graph = log --graph --all --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cd) %C(bold blue)<%an>%Creset' --abbrev-commit --date=format-local:'%Y/%m/%d %H:%M:%S'
+[color]
+        ui = auto
+[core]
+        quotepath = false
+        excludesfile = ~/.gitignore
+        precomposeunicode = true
+        autocrlf = false
+[rebase]
+        autostash = true
+[push]
+        default = simple
+[ghq]
+        root = ~/git
+[diff]
+        compactionHeuristic = true
+[pull]
+        ff = only
+
