@@ -1,16 +1,20 @@
-# zsh-setting
-autoload -U compinit
-compinit
 zstyle ':completion:*' menu select
 setopt correct
 bindkey ^T kill-word
 autoload -U select-word-style
+
 select-word-style bash
 export WORDCHARS='.-'
 #history-setting
+export HISTFILE=${HOME}/Dropbox/.zsh_history
 export HISTFILE=${HOME}/.zsh_history
+export HISTSIZE=1000
+export SAVEHIST=100000
 setopt share_history
 setopt HIST_IGNORE_ALL_DUPS
+stty stop undef
+bindkey -r "^O"
+bindkey "^/" redo
 
 # Git_ps1 prompt
 source ~/.git-prompt.sh
@@ -44,9 +48,15 @@ bindkey '^R' peco-history-selection
 export PATH="/usr/local/opt/mysql@5.7/bin:$PATH"
 
 #alias
+alias g=git
 alias be='bundle exec'
 #flutter
 export PATH="$PATH:/Users/s-katoh/development/flutter/bin"
 
+#jenv
 export PATH="$HOME/.jenv/bin:$PATH"
 eval "$(jenv init -)"
+
+#angular
+export PATH=export PATH="$HOME/.npm-global/bin:$PATH"
+export PATH="$HOME/.npm-global/bin:$PATH"
